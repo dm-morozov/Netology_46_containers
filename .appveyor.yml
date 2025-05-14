@@ -1,0 +1,17 @@
+version: 1.0.{build}
+image: Ubuntu2004
+install:
+  - sudo curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -
+  - sudo apt-get update
+  - sudo apt-get install -y nodejs
+  - node --version
+  - npm --version
+  - pwd
+  - ls -la
+  - npm install
+build: off
+test_script:
+  - pwd
+  - ls -la
+  - npm run lint
+  - npm test
