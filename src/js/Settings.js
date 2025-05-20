@@ -20,8 +20,8 @@ export default class Settings {
       difficulty: ["easy", "normal", "hard", "nightmare"],
     };
 
-    if (!validSettings[key] && !validSettings[key].include(value)) {
-      throw new Error ("Такого ключа или значения быть не может!")
+    if (!validSettings[key] || !validSettings[key].includes(value)) {
+      throw new Error("Такого ключа или значения быть не может!");
     }
 
     // Устанавливаем пользовательскую настройку
