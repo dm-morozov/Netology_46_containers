@@ -27,4 +27,8 @@ export default class Settings {
     // Устанавливаем пользовательскую настройку
     this.userSettings.set(key, value);
   }
+
+  get settings() {
+    return new Map([...this.defaultSettings, ...this.userSettings]);
+  }
 }
