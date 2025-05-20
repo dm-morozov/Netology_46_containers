@@ -3,6 +3,7 @@ import "./css/style.css";
 import Bowman from "./js/Bowman.js";
 import Character from "./js/Character.js";
 import Daemon from "./js/Daemon.js";
+import ErrorRepository from "./js/ErrorRepository.js";
 import Magician from "./js/Magician.js";
 import Swordsman from "./js/Swordsman.js";
 import Team from "./js/Team.js";
@@ -39,7 +40,6 @@ character.special = [
 ];
 console.log(character.getSpecialAttack());
 
-
 // Тестирование Team
 const team = new Team();
 const zombie = new Zombie("Zombie");
@@ -55,3 +55,8 @@ try {
 
 team.addAll(swordsman, zombie);
 console.log(team.toArray());
+
+// Тестирование ErrorRepository
+const errorRepo = new ErrorRepository();
+console.log("Ошибка 100:", errorRepo.translate(100)); // Недостаточно здоровья
+console.log("Ошибка 999:", errorRepo.translate(999)); // Unknown error
